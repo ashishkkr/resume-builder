@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Resume</title>
+</head>
+<body>
+<div class="container" id="cv-form">
+    <h1 class="text-center rg">Resume Generator</h1> 
+    
+    <div class="row">
+        <!-- first <col> -->
+        <div class="col-md-6">
+            <h3>Personal Information</h3>
+
+            <div class="form-group">
+                <!-- Name -->
+                <label for="nameField">Name</label>
+                <input type="text" id="nameField" placeholder="Enter your name" class="form-control">
+            </div>
+            <!-- mt-2 ==> gives margin at top of 2 px -->
+            <div class="form-group mt-2">
+                <!-- date of Birth -->
+                <label for="dobField">Date of Birth</label>
+                <input type="text" id="dobField" placeholder="dd/mm/yy" class="form-control">
+            </div>
+            <div class="form-group">
+                <!-- language-->
+                <label for="lgField">Languages</label>
+                <input type="text" id="lgField" placeholder="Enter here" class="form-control">
+            </div>
+            <div class="form-group mt-2">
+                <!-- contact -->
+                <label for="contactField">Contact</label>
+                <input type="text" id="contactField" placeholder="Enter your contact number" class="form-control">
+            </div>
+
+            <div class="form-group mt-2">
+                <!-- address -->
+                <label for="addressField">Your Address</label>
+                <textarea id="addressField" placeholder="Enter your address" class="form-control" rows="5"></textarea>
+            </div>
+
+            <div class="form-group mt-3">
+                <!-- image -->
+                <label for="">Upload your image</label>
+                <input id="imgField" type="file" class="form-control">
+            </div>
+
+            <p class="text-secondary my-3">Social Media Handles</p>
+            <div class="form-group mt-2">
+                <!-- facebook -->
+                <label for="fbField">Facebook</label>
+                <input type="text" id="fbField"  class="form-control">
+            </div>
+            <div class="form-group mt-2">
+                <!-- Instagram -->
+                <label for="igField">Instagram</label>
+                <input type="text" id="igField"  class="form-control">
+            </div>
+            <div class="form-group mt-2">
+                <!-- linkedin -->
+                <label for="lnField">Linkedin</label>
+                <input type="text" type="text" id="lnField"  class="form-control">
+            </div>
+            
+
+        </div>
+        <!-- second col -->
+        <div class="col-md-6">
+            <h3>Other Information</h3>
+
+            <div class="form-group mt-2" id="ed">
+                <!-- Education -->
+                <label for="">Education</label>
+                <textarea  class="form-control edField" rows="3"  placeholder="Enter here"></textarea>
+                <div class="container text-center mt-2" id="edAddButton">
+                    <button onclick="addNewEDUField()" class="btn btn-primary btn-sm color">Add</button>
+                </div>
+            </div>
+
+            <div class="form-group mt-2">
+                <!-- technical skills -->
+                <label for="">Technical Skills</label>
+                <textarea id="tsField"  class="form-control " rows="4" placeholder="Enter here"></textarea>
+            </div>
+
+            <div class="form-group mt-2">
+                <!-- soft skills -->
+                <label for="">Soft skills</label>
+                <textarea id="ssField"  class="form-control " rows="4" placeholder="Enter here"></textarea>
+            </div>
+
+            <div class="form-group mt-2 " id="we">
+                <!-- work Experience -->
+                <label for="">Work Experience</label>
+                <textarea  class="form-control weField" rows="4" placeholder="Enter here"></textarea>
+
+                <div class="container text-center mt-2" id="weAddButton">
+                    <button onclick="addNewWEField()" class="btn btn-primary btn-sm color">Add</button>
+                </div>
+            </div>
+            <div class="form-group mt-2">
+                <!-- Reference -->
+                <label for="">Reference</label>
+                <textarea id="rfField" class="form-control " rows="4"></textarea>
+            </div>
+           
+        </div>
+    </div>
+    <div class="container text-center mt-3">
+        <button onclick="generateCV()"  class="btn btn-primary btn-lg color1">Generate CV</button>
+    </div>
+</div>
+
+
+
+<div class="container" id="cv-template">
+    <div class="row">
+        <!-- py-5 ==> padding on y axis of 5 px -->
+        <div class="col-md-4 text-center py-3 background">
+            <!-- first col -->
+            <img src="https://www.clipartkey.com/mpngs/m/146-1461473_default-profile-picture-transparent.png"  alt="" class="img-fluid myimg" id="imgT">   
+            <p id="nameT1">Parul Jain</p>     
+            <p id="dobT">12/03/02</p>
+            <p id="langT">Hindi,english</p>
+            <p id="contactT">9826538290</p>  
+            <p id="addressT">2344/23 sector 20 rohini,delhi</p> 
+            <hr> 
+            <p>
+                <a id="fbT" href="#1">https://www.facebook.com/paruljain0025</a>
+            </p>
+            <p>
+                <a id="igT" href="#1">https://www.Instagram.com/paruljain_13</a>
+            </p>
+            <p>
+                <a id="lnT" href="#1">https://www.linkedin.com/paruljain0025</a>
+            </p>
+
+        </div>
+        <!-- second col -->
+        <div class="col-md-8 py-5">
+            <!-- NAME -->
+            <h1 id="nameT2" class="text-center" style="font-weight: 900;">
+                Parul Jain
+            </h1>
+
+            <!-- Education -->
+            <div class="card mt-4">
+                <div class="card-header background">
+                    <h3>Education</h3>
+                </div>
+                <div class="card-body">
+                    <ul id="edT">
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, sapiente.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, sapiente.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, sapiente.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, sapiente.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Technical skills -->
+            <div class="card mt-3">
+                <div class="card-header background">
+                    <h3>Technical skills</h3>
+                </div>
+                <div class="card-body">
+                    <ul id="tsT">
+                        <li>Lorem, ipsum.</li>
+                        <li>Lorem, ipsum.</li>
+                        <li>Lorem, ipsum.</li>
+                        <li>Lorem, ipsum.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Soft skills -->
+            <div class="card mt-3">
+                <div class="card-header background">
+                    <h3>Soft skills</h3>
+                </div>
+                <div class="card-body">
+                    <ul id="ssT">
+                        <li>Lorem, ipsum.</li>
+                        <li>Lorem, ipsum.</li>
+                        <li>Lorem, ipsum.</li>
+                        <li>Lorem, ipsum.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Work Experience -->
+            <div class="card mt-4">
+                <div class="card-header background">
+                    <h3>Work Experience</h3>
+                </div>
+                <div class="card-body">
+                    <ul id="weT">
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel explicabo accusantium laboriosam quidem amet eligendi, dicta temporibus numquam molestiae iusto.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel explicabo accusantium laboriosam quidem amet eligendi, dicta temporibus numquam molestiae iusto.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel explicabo accusantium laboriosam quidem amet eligendi, dicta temporibus numquam molestiae iusto.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel explicabo accusantium laboriosam quidem amet eligendi, dicta temporibus numquam molestiae iusto.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Reference -->
+            <div class="card mt-4">
+                <div class="card-header background">
+                    <h3>Reference</h3>
+                </div>
+                <div class="card-body">
+                    <p id="refT">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto magnam animi quia dolorum velit cupiditate eos error perferendis, debitis non odit atque, officiis suscipit! Provident qui, sequi ratione ipsum architecto hic corporis rem ducimus accusamus sint iusto quae! Id ex quasi aliquid labore unde doloribus eum voluptate officiis et ducimus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora aliquid, doloremque rerum mollitia at voluptates voluptatum asperiores eum voluptate ipsa!</p>
+                </div>
+            </div>
+
+             <div class="container mt-3 text-center">
+                 <button class="btn background" id="cv" onclick="printCV()">Print CV</button>
+             </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
+
+</div>
+
+<!-- <script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+<script src="script.js"></script>
+<!-- </script> -->
+</body>
+</html>

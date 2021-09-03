@@ -1,0 +1,44 @@
+
+body{
+    background-image: url(https://i.ytimg.com/vi/4xcRqk7sCbM/maxresdefault.jpg);
+    background-size: cover;
+    
+}
+.color{
+    background-color: #794b3a;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 6px;
+    width: 60px;
+}
+.color1{
+    width: 150px;
+    background-color: #794b3a;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 6px;
+}
+.color:hover{
+    background-color: rgb(231, 166, 136);
+    color: black;
+}
+.color1:hover{
+    background-color: rgb(231, 166, 136);
+    color: black;
+}
+h1.rg{
+    background-color:  rgb(132 106 87);
+    border-radius: 5px;
+    padding: 12px 12px;
+}
+#cv-template{
+    display: none;
+}
+.myimg{
+    /* border: 2px solid black; */
+    border-radius: 50%;
+    width: 300px;
+}
+.background{
+    background-color: rgb(132 106 87);
+}
